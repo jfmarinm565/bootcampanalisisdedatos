@@ -54,4 +54,4 @@ This is a personal learning repository. External contributions are not expected,
 
 ## 📄 License
 
-This project is intended for educational purposes only.
+This project is intended for educational purposes only
