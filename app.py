@@ -1,20 +1,39 @@
 import streamlit as st
 import pandas as pd
 
-import requests
-import pandas as pd
-from io import StringIO
-
-
-
-
-ruta_zni = 'https://github.com/juliandariogiraldoocampo/analisis_taltech/raw/refs/heads/main/explorador/ZNI.csv'
-response = requests.get(ruta_zni, verify=False)
-
-df = pd.read_csv(StringIO(response.text))
+# carga de datos, conexion df
+ruta_zni = 'data/ZNI.csv'
+df = pd.read_csv(ruta_zni)
 
 st.header('Estado de la Prestación del Servicio de Energía')
 st.subheader('Zonas no Interconectadas (ZNI)')
 st.text('Conjunto de Datos')
 
-st.dataframe(df)
+# analisis de los datos
+filas = df.shape[0]
+columnas =  df.shape[1]
+
+# visualizacion de los datos
+
+col1, col2 = st.columns(2)
+
+with col1:
+    with st.container(border=True):
+        st.subheader('Numero Filas')
+        st.text(filas)
+
+with col2:
+    with st.container(border=True):
+         st.subheader('Número de columnas')
+         st.text(columnas)
+
+# otra forma de mostrar los datos
+
+col3, col4 = st.columns(2)
+with col3:
+    st.metric('Numero de filas', filas, border=True)
+with col4:
+    st.metric ('Numero de columnas', columnas, border=True)
+
+
+ #st.dataframe(df)
