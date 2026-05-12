@@ -91,3 +91,6 @@ st.image('img/head.png')
 st.dataframe(df_pivote)
 # hasta aca se sincronizo con gibhub
 print('hola mundo')
+print('hola mundo')
+print('hola mundo')
+print('hola mundo')
